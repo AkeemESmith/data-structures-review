@@ -33,6 +33,17 @@ class Node {
 // Approach:
 // Time & Space Complexity:
 const invertTree = (root) => {
+  const traverse = node => {
+    if (!node) return;
+    let temp = node.right;
+    node.right = node.left;
+    node.left = temp;
+    traverse(node.left)
+    traverse(node.right)
+  }
+  traverse(root)
+  return root
+  
   // TO DO
 };
 
