@@ -22,6 +22,14 @@ d.next = b; // cycle
 // Time & Space Complexity: O(n) time | O(1) space
 const linkedListCycle = (head) => {
   // TO DO
+  let slow, fast = head;
+
+  while (fast) {
+    slow = slow.next;
+    fast = fast.next.next;
+    if (fast === slow) return true;
+  }
+  return false;
 };
 
 module.exports = { linkedListCycle };
