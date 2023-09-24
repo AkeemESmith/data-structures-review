@@ -22,5 +22,15 @@ class Node {
 // Time & Space Complexity:
 const dfs = (root) => {
   // TO DO
+
+  const output = [];
+  const traverse = node => {
+    if (!node) return;
+    output.push(node.val);
+    traverse(node.left);
+    traverse(node.left);
+  }
+  traverse(root);
+  return output;
 };
 module.exports = { dfs };
