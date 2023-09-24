@@ -22,7 +22,16 @@ class Node {
 // Time & Space Complexity:
 const bfs = (root) => {
   // TO DO
-  
+  const output = [];
+  const queue = [root];
+  while (queue.length > 0) {
+    let current = queue.shift();
+
+    output.push(current.val);
+    if (current.left) queue.push(current.left);
+    if (current.right) queue.push(current.right);
+  }
+  return output;
 };
 
 module.exports = { bfs };
