@@ -34,6 +34,19 @@ class Node {
 // Time & Space Complexity:
 const isBinarySearchTree = (root) => {
   // TO DO
+  isBinary = true;
+  const traverse = node => {
+    if (!node) return;
+
+    if (node.left.val > node.val || node.right.val < node.val) {
+      isBinary = false
+      return;
+    } 
+    traverse(node.left)
+    traverse(node.right)
+  }
+  return isBinary;
+  
 };
 
 module.exports = { isBinarySearchTree };
